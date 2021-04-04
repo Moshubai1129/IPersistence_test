@@ -1,0 +1,15 @@
+<mapper namespace="com.ch.dao.IUserDao">
+    <!--sql的唯一表示：namespace.id来组成： statementId-->
+    <select id="findAll" resultType="com.ch.pojo.User">
+        select * from user
+    </select>
+
+ <!--   User user=new User()
+    user.setId(1);
+    user.setUsername("zhangsan")-->
+    <select id="findByCondition" resultType="com.ch.pojo.User" parameterType="com.ch.pojo.User">
+        select * from user where id=#{id} and username=#{username}
+    </select>
+
+
+</mapper>
